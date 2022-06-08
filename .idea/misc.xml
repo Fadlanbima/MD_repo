@@ -24,13 +24,6 @@
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/activity_list.xml" value="0.25416666666666665" />
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/bangkit/MD_repo/app/src/main/res/layout/activity_home.xml" value="0.13632246376811594" />
-        <entry key="..\:/bangkit/MD_repo/app/src/main/res/layout/activity_login.xml" value="0.13632246376811594" />
-        <entry key="..\:/bangkit/MD_repo/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/bangkit/MD_repo/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
-        <entry key="..\:/bangkit/MD_repo/app/src/main/res/layout/fragment_first_screen.xml" value="0.13632246376811594" />
-        <entry key="..\:/bangkit/MD_repo/app/src/main/res/layout/fragment_second_screen.xml" value="0.13632246376811594" />
-        <entry key="..\:/bangkit/MD_repo/app/src/main/res/layout/fragment_splash.xml" value="0.22826086956521738" />
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/activity_preference1.xml" value="0.25416666666666665" />
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/activity_preference2.xml" value="0.24010416666666667" />
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/activity_preference3.xml" value="0.25416666666666665" />
@@ -41,6 +34,9 @@
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/fragment_third_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/layout/item_card_home.xml" value="0.25416666666666665" />
         <entry key="..\:/GitHub/MD_repo/app/src/main/res/menu/option_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/bangkit1/MD_repo/app/src/main/res/layout/activity_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/bangkit1/MD_repo/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/bangkit1/MD_repo/app/src/main/res/layout/activity_register.xml" value="0.259375" />
       </map>
     </option>
   </component>

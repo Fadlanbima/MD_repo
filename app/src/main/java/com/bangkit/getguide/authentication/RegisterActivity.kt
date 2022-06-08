@@ -19,40 +19,40 @@ class RegisterActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        binding.tvToLogin.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnRegister.setOnClickListener {
-            val email = binding.edtEmailRegister.text.toString()
-            val password = binding.edtPasswordRegister.text.toString()
+            val email = binding.edtEmail.text.toString()
+            val password = binding.edtPassword.text.toString()
 
             //Validasi email
             if (email.isEmpty()) {
-                binding.edtEmailRegister.error = "Email Harus Diisi"
-                binding.edtEmailRegister.requestFocus()
+                binding.edtEmail.error = "Email Harus Diisi"
+                binding.edtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi email tidak sesuai
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.edtEmailRegister.error = "Email Tidak Valid"
-                binding.edtEmailRegister.requestFocus()
+                binding.edtEmail.error = "Email Tidak Valid"
+                binding.edtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi password
             if (password.isEmpty()) {
-                binding.edtPasswordRegister.error = "Password Harus Diisi"
-                binding.edtPasswordRegister.requestFocus()
+                binding.edtPassword.error = "Password Harus Diisi"
+                binding.edtPassword.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi panjang password
             if (password.length < 6) {
-                binding.edtPasswordRegister.error = "Password Minimal 6 Karakter"
-                binding.edtPasswordRegister.requestFocus()
+                binding.edtPassword.error = "Password Minimal 6 Karakter"
+                binding.edtPassword.requestFocus()
                 return@setOnClickListener
             }
 
