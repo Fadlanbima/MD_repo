@@ -17,6 +17,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         auth = FirebaseAuth.getInstance()
 
         binding.btnRegister.setOnClickListener {

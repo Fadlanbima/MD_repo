@@ -1,17 +1,13 @@
 package com.bangkit.getguide.authentication
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
 import android.util.Patterns
-import android.view.View
 import android.widget.Toast
 import com.bangkit.getguide.HomeActivity
-import com.bangkit.getguide.R
+import com.bangkit.getguide.SessionManager
 import com.bangkit.getguide.databinding.ActivityLoginBinding
-import com.bangkit.getguide.preference.Preference1Activity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -24,8 +20,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
+        supportActionBar?.hide()
 
+        auth = FirebaseAuth.getInstance()
 
         binding.btnRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -62,10 +59,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun LoginFirebase(email: String, password: String) {
+        val Session = SessionManager(this)
+
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
+
+                    Session.Login()
+
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 } else {
