@@ -13,11 +13,16 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bangkit.getguide.authentication.LoginActivity
+import com.bangkit.getguide.preference.Preference2Activity
+import com.bangkit.getguide.utils.SessionManager
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var rvListHome: RecyclerView
     private val list = ArrayList<ListHome>()
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +33,8 @@ class HomeActivity : AppCompatActivity() {
 
         list.addAll(ListWisataHome.listData)
         showRecycleView()
+
+        auth = FirebaseAuth.getInstance()
 
     }
 
@@ -69,18 +76,31 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu1 -> {
-                val intent = Intent(this@HomeActivity, DetailActivity::class.java)
+                val intent = Intent(this@HomeActivity, Preference2Activity::class.java)
                 startActivity(intent)
             }
             R.id.menu2 -> {
-                showToast(resources.getString(R.string.menu))
-                Handler(Looper.getMainLooper()).postDelayed({
-                    startActivity(Intent(this, ListActivity::class.java))
-                }, 2000)
-                return super.onOptionsItemSelected(item)
+//                showToast(resources.getString(R.string.menu))
+//                Handler(Looper.getMainLooper()).postDelayed({
+//                    startActivity(Intent(this, ListActivity::class.java))
+//                }, 2000)
+//                return super.onOptionsItemSelected(item)
+
+                signOut()
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun signOut(){
+        auth.signOut()
+
+        val session = SessionManager(this)
+        session.signOut()
+
+        val intent = Intent(this@HomeActivity, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun showToast(message: String) {
