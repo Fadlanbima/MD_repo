@@ -13,11 +13,13 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var rvListHome: RecyclerView
     private val list = ArrayList<ListHome>()
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,8 @@ class HomeActivity : AppCompatActivity() {
 
         list.addAll(ListWisataHome.listData)
         showRecycleView()
+
+        auth = FirebaseAuth.getInstance()
 
     }
 

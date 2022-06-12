@@ -3,10 +3,14 @@ package com.bangkit.getguide.authentication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import com.bangkit.getguide.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
@@ -27,6 +31,9 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
+            showLoading(true)
+
+            val name = binding.edtName.text.toString()
             val email = binding.edtEmail.text.toString()
             val password = binding.edtPassword.text.toString()
 
@@ -58,20 +65,53 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            RegisterFirebase(email, password)
+            RegisterFirebase(name, email, password)
         }
     }
 
-    private fun RegisterFirebase(email: String, password: String) {
+    private fun RegisterFirebase(name: String, email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
+                    addUserToFirestore(name, email)
+
+                    showLoading(false)
                     Toast.makeText(this, "Register Berhasil", Toast.LENGTH_SHORT).show()
+
                     val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
                 } else {
+                    showLoading(false)
                     Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun addUserToFirestore(name: String, email: String) {
+        val user = auth.currentUser
+        val db = Firebase.firestore
+
+        val userData = hashMapOf(
+            "name" to name,
+            "email" to email,
+            "preference" to 0
+        )
+
+        db.collection("users").document("${user?.uid}")
+            .set(userData)
+            .addOnSuccessListener { Log.d(TAG, "User Data successfully written on Firestore!") }
+            .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    companion object {
+        val TAG = "Register Activity"
     }
 }

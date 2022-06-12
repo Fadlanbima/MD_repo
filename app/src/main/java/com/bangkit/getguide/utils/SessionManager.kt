@@ -1,4 +1,4 @@
-package com.bangkit.getguide
+package com.bangkit.getguide.utils
 
 import android.content.Context
 import android.content.SharedPreferences

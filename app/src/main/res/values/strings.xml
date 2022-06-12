@@ -11,6 +11,7 @@
     <string name="vac_wfamily">Vacation With Family</string>
     <string name="vac_wfriend">Vacation With Friend</string>
     <string name="pref2_qtitle">Question 2</string>
+    <string name="qtitle">Question</string>
     <string name="pref2_qdesc">Where is your destination on vacation?</string>
     <string name="water_recreation">Water Recreation</string>
     <string name="mountains_and_countryside">Mountains and Countryside</string>
