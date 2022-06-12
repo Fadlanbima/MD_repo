@@ -31,40 +31,42 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
-            showLoading(true)
-
             val name = binding.edtName.text.toString()
             val email = binding.edtEmail.text.toString()
             val password = binding.edtPassword.text.toString()
 
+            val emailLayout = binding.tilEmail
+            val passwordLayout = binding.tilPass
+
             //Validasi email
             if (email.isEmpty()) {
-                binding.edtEmail.error = "Email Harus Diisi"
+                emailLayout.error = "Email Harus Diisi"
                 binding.edtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi email tidak sesuai
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.edtEmail.error = "Email Tidak Valid"
+                emailLayout.error = "Email Tidak Valid"
                 binding.edtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi password
             if (password.isEmpty()) {
-                binding.edtPassword.error = "Password Harus Diisi"
+                passwordLayout.error = "Password Harus Diisi"
                 binding.edtPassword.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi panjang password
             if (password.length < 6) {
-                binding.edtPassword.error = "Password Minimal 6 Karakter"
+                passwordLayout.error = "Password Minimal 6 Karakter"
                 binding.edtPassword.requestFocus()
                 return@setOnClickListener
             }
 
+            showLoading(true)
             RegisterFirebase(name, email, password)
         }
     }

@@ -35,32 +35,34 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-            showLoading(true)
-
             val email = binding.edtEmail.text.toString()
             val password = binding.edtPassword.text.toString()
 
+            val emailLayout = binding.tilEmail
+            val passwordLayout = binding.tilPass
+
             //Validasi email
             if (email.isEmpty()) {
-                binding.edtEmail.error = "Email Harus Diisi"
+                emailLayout.error = "Email Harus Diisi"
                 binding.edtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi email tidak sesuai
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.edtEmail.error = "Email Tidak Valid"
+                emailLayout.error = "Email Tidak Valid"
                 binding.edtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             //Validasi password
             if (password.isEmpty()) {
-                binding.edtPassword.error = "Password Harus Diisi"
+                passwordLayout.error = "Password Harus Diisi"
                 binding.edtPassword.requestFocus()
                 return@setOnClickListener
             }
 
+            showLoading(true)
             LoginFirebase(email, password)
         }
     }
@@ -75,13 +77,7 @@ class LoginActivity : AppCompatActivity() {
 
                     Session.Login()
 
-                    if (checkPreference() == 0) {
-                        val intent = Intent(this, Preference2Activity::class.java)
-                        startActivity(intent)
-                    } else {
-                        val intent = Intent(this, HomeActivity::class.java)
-                        startActivity(intent)
-                    }
+                    checkPreference()
                 } else {
                     showLoading(false)
                     Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -89,17 +85,26 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-    private fun checkPreference(): Int {
+    private fun checkPreference() {
         val user = auth.currentUser
         val db = Firebase.firestore
-        var pref = 0
 
         val userData = db.collection("users").document("${user?.uid}")
         userData.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
                     Log.d(TAG, "User data: ${document.data}")
-                    pref = document.getLong("preference")!!.toInt()
+                    val pref = document.getLong("preference")!!.toInt()
+
+                    if (pref == 0) {
+                        val intent = Intent(this, Preference2Activity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        val intent = Intent(this, HomeActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
                 } else {
                     Log.d(TAG, "No such document")
                 }
@@ -107,8 +112,6 @@ class LoginActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d(TAG, "get failed with ", exception)
             }
-
-        return pref
     }
 
     private fun showLoading(isLoading: Boolean) {

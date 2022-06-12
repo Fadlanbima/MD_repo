@@ -18,5 +18,8 @@ class SessionManager(context: Context) {
         return prefs.getBoolean(isLogin, false)
     }
 
-
+    fun signOut(){
+        editor.putBoolean(isLogin, false)
+        editor.apply()
+    }
 }

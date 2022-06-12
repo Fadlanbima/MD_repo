@@ -27,4 +27,6 @@
     <string name="find_tourist_spots_for_family">FIND TOURIST SPOTS FOR FAMILY</string>
     <string name="let_s_discover_enjoy_amp_share_experiences"><![CDATA[LET\'S DISCOVER, ENJOY & SHARE EXPERIENCES]]></string>
     <string name="first_screen_desc">There are many tourist attractions of various types that you can find here</string>
+    <string name="preference">Preference</string>
+    <string name="sign_out">Sign Out</string>
 </resources>
