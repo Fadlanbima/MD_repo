@@ -1,32 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/sand"
     tools:context=".HomeActivity">
 
-    <ImageView
-        android:id="@+id/iv_item_logo"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/ic_baseline_beach_access_24"/>
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="411dp"
+        android:layout_height="730dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/tv_item_tipe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Beach Recreation"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="-20dp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:ignore="ExtraText">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rv_listhome"/>
+            //1
 
+            <ImageView
+                android:id="@+id/iv_item_logo1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_baseline_beach_access_24" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tv_item_tipe1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:text="Beach Recreation"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pantai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                tools:itemCount="6" />
+
+            //2
+
+            <ImageView
+                android:id="@+id/iv_item_logo2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/mount" />
+
+            <TextView
+                android:id="@+id/tv_item_tipe2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:text="Mountains and Countryside"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_gunung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                tools:itemCount="6" />
+
+            //3
+
+            <ImageView
+                android:id="@+id/iv_item_logo3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/boro" />
+
+            <TextView
+                android:id="@+id/tv_item_tipe3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:text="Historical and Religious Sites"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_histori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                tools:itemCount="6" />
+
+            //4
+
+            <ImageView
+                android:id="@+id/iv_item_logo4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/mount" />
+
+            <TextView
+                android:id="@+id/tv_item_tipe4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:text="City Park"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_kota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                tools:itemCount="6" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

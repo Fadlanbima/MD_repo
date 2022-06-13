@@ -1,234 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".preference.Preference3Activity"
-    android:padding="32dp"
     android:background="@color/sand">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/pref1_title"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pref1_qtitle"
-            android:textSize="16sp"
-            android:fontFamily="@font/inter_semi_bold"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pref1_qdesc"
-            android:textSize="16sp"
-            android:fontFamily="@font/inter_medium"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:layout_editor_absoluteX="32dp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/round_corner"
-            android:backgroundTint="#4B99C6"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            tools:layout_editor_absoluteX="32dp">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_vac_alone"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:textColor="@color/white"
-                app:strokeColor="@color/white"
-                android:textAlignment="viewStart"
-                android:text="@string/vac_alone"
-                android:textSize="16sp"
-                android:fontFamily="@font/inter_bold"
-                app:cornerRadius="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_vac_wcouple"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/vac_wcouple"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/btn_vac_alone"
-                app:strokeColor="@color/white"
-                tools:layout_editor_absoluteX="24dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_vac_wfamily"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/vac_wfamily"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/btn_vac_wcouple"
-                app:strokeColor="@color/white"
-                tools:layout_editor_absoluteX="24dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_vac_wfriend"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/vac_wfriend"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/btn_vac_wfamily"
-                app:strokeColor="@color/white"
-                tools:layout_editor_absoluteX="24dp" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_semi_bold"
-            android:text="@string/pref2_qtitle"
-            android:textSize="16sp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout1" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pref2_qdesc"
-            android:textSize="16sp"
-            android:fontFamily="@font/inter_medium"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"
-            tools:layout_editor_absoluteX="32dp" />
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="730dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/round_corner"
-            android:backgroundTint="#4B99C6"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
-            tools:layout_editor_absoluteX="32dp">
+            android:padding="10dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:textColor="@color/white"
-                app:strokeColor="@color/white"
-                android:textAlignment="viewStart"
-                android:text="@string/water_recreation"
-                android:textSize="16sp"
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_bold"
-                app:cornerRadius="10dp"
+                android:text="@string/pref1_title"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button6"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            <TextView
+                android:id="@+id/textView5"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/mountains_and_countryside"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="@string/pref1_qtitle"
                 android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/button5"
-                app:strokeColor="@color/white"
-                tools:layout_editor_absoluteX="24dp" />
+                android:fontFamily="@font/inter_semi_bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button7"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            <TextView
+                android:id="@+id/textView6"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/historical_and_religious_sites"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="@string/pref1_qdesc"
                 android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/button6"
-                app:strokeColor="@color/white"
-                tools:layout_editor_absoluteX="24dp" />
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tools:layout_editor_absoluteX="32dp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button8"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout1"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/museum"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/button7"
-                app:strokeColor="@color/white"
-                tools:layout_editor_absoluteX="24dp" />
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_corner"
+                android:backgroundTint="#4B99C6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                tools:layout_editor_absoluteX="32dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button9"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_vac_alone"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:textColor="@color/white"
+                    app:strokeColor="@color/white"
+                    android:textAlignment="viewStart"
+                    android:text="@string/vac_alone"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter_bold"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_vac_wcouple"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/vac_wcouple"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_vac_alone"
+                    app:strokeColor="@color/white"
+                    tools:layout_editor_absoluteX="24dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_vac_wfamily"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/vac_wfamily"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_vac_wcouple"
+                    app:strokeColor="@color/white"
+                    tools:layout_editor_absoluteX="24dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_vac_wfriend"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/vac_wfriend"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_vac_wfamily"
+                    app:strokeColor="@color/white"
+                    tools:layout_editor_absoluteX="24dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView7"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/city_tour"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semi_bold"
+                android:text="@string/pref2_qtitle"
                 android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/button8"
-                app:strokeColor="@color/white"
-                tools:layout_editor_absoluteX="24dp" />
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout1" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pref2_qdesc"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                tools:layout_editor_absoluteX="32dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_corner"
+                android:backgroundTint="#4B99C6"
+                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                tools:layout_editor_absoluteX="32dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:textColor="@color/white"
+                    app:strokeColor="@color/white"
+                    android:textAlignment="viewStart"
+                    android:text="@string/water_recreation"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter_bold"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button6"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/mountains_and_countryside"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/button5"
+                    app:strokeColor="@color/white"
+                    tools:layout_editor_absoluteX="24dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button7"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/historical_and_religious_sites"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/button6"
+                    app:strokeColor="@color/white"
+                    tools:layout_editor_absoluteX="24dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button8"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/museum"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/button7"
+                    app:strokeColor="@color/white"
+                    tools:layout_editor_absoluteX="24dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button9"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/city_tour"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/button8"
+                    app:strokeColor="@color/white"
+                    tools:layout_editor_absoluteX="24dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
