@@ -1,16 +1,20 @@
 package com.bangkit.getguide
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bangkit.getguide.authentication.LoginActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class ListHomeAdapter (private val listHome: ArrayList<ListHome>) : RecyclerView.Adapter<ListHomeAdapter.CardViewViewHolder>() {
+class ListHomeAdapter (private val context:Context,private val listHome: ArrayList<ListHome>) : RecyclerView.Adapter<ListHomeAdapter.CardViewViewHolder>() {
     inner class CardViewViewHolder (itemView: View): RecyclerView.ViewHolder(itemView) {
         var  imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         var  tvName: TextView = itemView.findViewById(R.id.tv_item_name)
@@ -39,9 +43,13 @@ class ListHomeAdapter (private val listHome: ArrayList<ListHome>) : RecyclerView
 
         holder.itemView.setOnClickListener {
             Toast.makeText(holder.itemView.context,"Kamu Memilih " + listHome[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, DetailActivity::class.java)
+            context.startActivity(intent)
+
         }
 
     }
+
 
     override fun getItemCount(): Int {
         return listHome.size

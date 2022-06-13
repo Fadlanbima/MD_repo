@@ -20,7 +20,10 @@ import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var rvListHome: RecyclerView
+    private lateinit var rvListHome1: RecyclerView
+    private lateinit var rvListHome2: RecyclerView
+    private lateinit var rvListHome3: RecyclerView
+    private lateinit var rvListHome4: RecyclerView
     private val list = ArrayList<ListHome>()
     lateinit var auth: FirebaseAuth
 
@@ -28,8 +31,15 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        rvListHome = findViewById(R.id.rv_listhome)
-        rvListHome.setHasFixedSize(true)
+        rvListHome1 = findViewById(R.id.rv_pantai)
+        rvListHome2 = findViewById(R.id.rv_gunung)
+        rvListHome3 = findViewById(R.id.rv_histori)
+        rvListHome4 = findViewById(R.id.rv_kota)
+
+        rvListHome1.setHasFixedSize(true)
+        rvListHome2.setHasFixedSize(true)
+        rvListHome3.setHasFixedSize(true)
+        rvListHome4.setHasFixedSize(true)
 
         list.addAll(ListWisataHome.listData)
         showRecycleView()
@@ -39,9 +49,16 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showRecycleView() {
-        rvListHome.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        val listHomeAdapter = ListHomeAdapter(list)
-        rvListHome.adapter = listHomeAdapter
+        rvListHome1.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        rvListHome2.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        rvListHome3.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        rvListHome4.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+
+        val listHomeAdapter = ListHomeAdapter(this,list)
+        rvListHome1.adapter = listHomeAdapter
+        rvListHome2.adapter = listHomeAdapter
+        rvListHome3.adapter = listHomeAdapter
+        rvListHome4.adapter = listHomeAdapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
